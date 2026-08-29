@@ -7,6 +7,8 @@ public class Crudclientes {
     static void main(String[] args) {
         cadastrar();
         listar();
+        remover();
+
 
         System.out.println(clientes.size());
     }
@@ -22,13 +24,12 @@ public class Crudclientes {
         System.out.println("digite o seu numero de telefone\n");
         String telefone = scanner.nextLine();
 
-        System.out.println("digie sua idade");
-        String idade = scanner.nextLine();
+
         Cliente c1 = new Cliente();
         c1.nome = nome;
         c1.telefone = telefone;
         c1.email = email;
-        c1.idade = idade;
+
         clientes.add(c1);
 
 
@@ -39,8 +40,15 @@ public class Crudclientes {
             System.out.println(c.nome);
             System.out.println(c.telefone);
             System.out.println(c.email);
-            System.out.println(c.idade);
-        }
 
+        }
     }
+
+    static void remover() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("digite o nome do cliente que deseja remover \n");
+        String nomepararemover = (scanner.nextLine());
+        clientes.removeIf(cliente -> cliente.nome.equals(nomepararemover));
+    }
+
 }
