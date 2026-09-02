@@ -7,6 +7,9 @@ public class Crudclientes {
     static void main(String[] args) {
         cadastrar();
         listar();
+        System.out.println("----atualizando----");
+        atualizar();
+        listar();
         remover();
 
 
@@ -49,6 +52,25 @@ public class Crudclientes {
         System.out.println("digite o nome do cliente que deseja remover \n");
         String nomepararemover = (scanner.nextLine());
         clientes.removeIf(cliente -> cliente.nome.equals(nomepararemover));
+    }
+
+    static void atualizar() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("digite o nome do cliente que deseja atualizar \n");
+        String nomeparaatualizar = (scanner.nextLine());
+        for (Cliente c : clientes) {
+            if (c.nome.equals(nomeparaatualizar)) {
+                System.out.println("digite o novotelefone");
+                String novotelefone = scanner.nextLine();
+                c.telefone = novotelefone;
+
+                System.out.println("digite o novo email");
+                String novoemail = scanner.nextLine();
+                c.email = novoemail;
+
+
+            }
+        }
     }
 
 }
