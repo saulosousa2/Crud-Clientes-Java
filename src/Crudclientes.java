@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Crudclientes {
     static ArrayList<Cliente> clientes = new ArrayList<>();
 
-    static void main(String[] args) {
+   public static void main(String[] args) {
         cadastrar();
         listar();
         System.out.println("----atualizando----");
